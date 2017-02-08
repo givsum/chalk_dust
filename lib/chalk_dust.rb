@@ -63,9 +63,17 @@ module ChalkDust
 
   def self.activity_feed_for(subscriber, options = {})
     topic = options.fetch(:topic, blank_topic)
+      
+    # activity_items = ''
     activity_items = ActivityItem.for_owner(subscriber)
-    activity_items = activity_items.since(options[:since]) if options[:since].present?
     activity_items = activity_items.with_topic(topic) unless topic == :all
+    activity_items = activity_items.since(options[:since]) if options[:since].present?
+    activity_items = activity_items.performer(subscriber, options[:performer]) if options[:performer].present?
+    activity_items = activity_items.target_type(options[:target_type]) if options[:target_type].present?
+    
+    activity_items = activity_items.order(options[:order]) if options[:order].present?
+    activity_items = activity_items.limit(options[:limit]) if options[:limit].present?
+    
     activity_items
   end
 
