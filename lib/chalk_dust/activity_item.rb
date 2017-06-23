@@ -5,7 +5,11 @@ module ChalkDust
     belongs_to :owner,     :polymorphic => true
 
     validates :event, :presence => true
-
+    
+    def self.event( event )
+      where("event IN (?)", event)
+    end
+    
     def self.for_owner(owner)
       where(
         :owner_id   => owner.id,

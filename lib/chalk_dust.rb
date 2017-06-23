@@ -70,7 +70,7 @@ module ChalkDust
     activity_items = activity_items.since(options[:since]) if options[:since].present?
     activity_items = activity_items.performer(subscriber, options[:performer]) if options[:performer].present?
     activity_items = activity_items.target_type(options[:target_type]) if options[:target_type].present?
-    
+    activity_items = activity_items.event(options[:event]) if options[:event].present?
     activity_items = activity_items.order(options[:order]) if options[:order].present?
     activity_items = activity_items.limit(options[:limit]) if options[:limit].present?
     
