@@ -32,7 +32,7 @@ module ChalkDust
           performer_type: subscriber.class
         )
       else
-        where("performer_id != ? AND performer_type != ?", subscriber.id, subscriber.class)
+        where("(performer_id = ? AND performer_type = ?) IS NOT TRUE", subscriber.id, subscriber.class)
       end
     end
     
