@@ -147,8 +147,8 @@ ChalkDust.unsubscribe(user, :from => post, :topic => :all)
 
 ## Compatibility
 
-Tested with MRI 1.9.x, MRI 2.0.0, JRuby (1.9 and 2.0 mode) against both
-ActiveRecord 3.0 and 4.0.
+Tested with MRI 1.9.x, MRI 2.0.0, JRuby (1.9 and 2.0 mode) against ActiveRecord
+3.0,4.0, and 5.2.3
 
 See the [build status](https://travis-ci.org/krisleech/chalk_dust) for details.
 
@@ -169,6 +169,7 @@ To run the specs for a specific version of ActiveRecord:
 ```
 env BUNDLE_GEMFILE=$PWD/gemfiles/activerecord-3.0 bundle exec rspec spec
 env BUNDLE_GEMFILE=$PWD/gemfiles/activerecord-4.0 bundle exec rspec spec
+env BUNDLE_GEMFILE=$PWD/gemfiles/activerecord-5.2 bundle exec rspec spec
 ```
 
 ## Thanks

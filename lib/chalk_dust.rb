@@ -63,7 +63,6 @@ module ChalkDust
 
   def self.activity_feed_for(subscriber, options = {})
     topic = options.fetch(:topic, blank_topic)
-      
     # activity_items = ''
     activity_items = ActivityItem.for_owner(subscriber)
     activity_items = activity_items.with_topic(topic) unless topic == :all

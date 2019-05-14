@@ -3,6 +3,7 @@ script: rspec spec
 gemfile: 
   - gemfiles/activerecord-3.0
   - gemfiles/activerecord-4.0
+  - gemfiles/activerecord-5.2
 rvm:
   - '1.9.2'
   - '1.9.3'

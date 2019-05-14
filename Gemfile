@@ -13,4 +13,5 @@ group :development do
   gem 'simplecov'
   gem 'guard-rspec'
   gem 'wwtd'
+  gem 'pry'
 end
