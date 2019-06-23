@@ -25,7 +25,7 @@ module ChalkDust
                      :subscriber_id   => subscriber.id,
                      :subscriber_type => subscriber.class.to_s }
       conditions = conditions.merge(:topic => topic) unless topic == :all
-      destroy_all(conditions)
+      self.where(conditions).destroy_all
     end
   end
 end
