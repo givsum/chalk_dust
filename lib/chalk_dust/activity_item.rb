@@ -29,10 +29,10 @@ module ChalkDust
       if 'self' == performer
         where(
           performer_id: subscriber.id,
-          performer_type: subscriber.class
+          performer_type: subscriber.class.to_s
         )
       else
-        where("(performer_id = ? AND performer_type = ?) IS NOT TRUE", subscriber.id, subscriber.class)
+        where("(performer_id = ? AND performer_type = ?) IS NOT TRUE", subscriber.id, subscriber.class.to_s)
       end
     end
     
